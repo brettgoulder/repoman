@@ -1,19 +1,35 @@
 require 'sinatra'
-class App
- 
-  set :static, true
-  set :port, 4242
+require 'json'
+require 'repoman'
 
-  get '/' do
-    erb :index
+module Repoman
+  class App < Sinatra::Application
+
+    configure do
+      set :static, true
+      set :port, 4567
+    end
+
+    get '/' do
+      erb :index
+    end
+
+    get '/commits.json' do
+      content_type :json
+      parsed_commits = Repoman::DiffParse.new(File.expand_path('.'), ARGV[0]).parse
+      if !parsed_commits.empty? 
+        parsed_commits.to_json
+      else
+      end
+    end
+
+    not_found do
+      erb :not_found
+    end
+
+    error do
+      erb :error
+    end
+
   end
-
-  not_found do
-    haml :not_found
-  end
-
-  error do
-    haml :error
-  end
-
 end

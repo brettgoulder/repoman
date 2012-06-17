@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+lib = File.expand_path('../../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
+require 'repoman/app/app'
+require 'sinatra'
+
+if ARGV.count == 1
+  path = File.expand_path('.')
+  begin
+    if File.directory?('.git')
+      Repoman::App.run!
+    else
+      puts "You need to run this from the root of your git repository"
+    end
+  rescue Exception => e
+    puts e.message
+    puts e.backtrace
+  end
+end

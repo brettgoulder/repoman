@@ -25,7 +25,7 @@ module Repoman
         info, diff = info_and_diff(commit)
         Map.new(
           info: info.to_hash,
-          diff: diff,
+          diff: diff.diff,
         )
       end.reverse
     end
