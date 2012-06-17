@@ -16,6 +16,8 @@ Gem::Specification.new do |gem|
   gem.version       = Repoman::VERSION
 
   gem.add_dependency "grit"
+  gem.add_dependency "map"
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "guard-rspec"
+  gem.add_development_dependency "pry"
 end
