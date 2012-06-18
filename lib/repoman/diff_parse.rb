@@ -23,10 +23,10 @@ module Repoman
     def parse
       split_commits(log).map do |commit|
         info, diff = info_and_diff(commit)
-        Map.new(
+        {
           info: info.to_hash,
           diff: diff.diff,
-        )
+        }
       end.reverse
     end
 
