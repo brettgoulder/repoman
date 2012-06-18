@@ -1,3 +1,4 @@
 require 'rubygems' unless defined?(Gem)
 require './app'
-run Sinatra::Application
+
+run Repoman::App

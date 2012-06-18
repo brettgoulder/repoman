@@ -25,9 +25,25 @@ module Repoman
         info, diff = info_and_diff(commit)
         {
           info: info.to_hash,
-          diff: diff.diff,
+          diff: split_diff(diff.diff),
         }
+        require 'pry'; binding.pry
       end.reverse
+    end
+
+    def split_diff(diff)
+      diff.split(/@@ [-+](\d+)(,(\d+))? [-+](\d+)(,(\d+))? @@/).map.with_index do |part, index|
+        if index == 0
+          next
+        elsif line.match(/\b(\d+),\d+/)
+          @diff = {
+            start_string: line.match(/\b(\d+),\d+/)[1].to_i,
+            number_of_lines: line.match(/\b\d+,(\d+)/)[1].to_i
+          }
+        elsif line.match(/(\+|-)/)
+          @diff['lines'] = part.split(/\n/)
+        end
+      end
     end
 
   end
