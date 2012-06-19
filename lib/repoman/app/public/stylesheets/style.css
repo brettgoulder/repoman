@@ -1,0 +1,70 @@
+body {
+  padding-top: 60px;
+  font: 13px Helvetica,arial,freesans,clean,sans-serif;
+}
+
+/* Fonts */
+h2 {
+  margin: 0;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #52595D;
+}
+
+table td, pre {
+  font-family: Menlo, monospace;
+  font-size: 13px;
+}
+
+/* Objects */
+#container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.code-info {
+  width: 65%;
+}
+
+.line_number {
+  background-color: #ECECEC;
+  color: #aaa;
+  padding: 0 3px 0 4px;
+  text-align: center;
+}
+
+.code {
+  background-color: white;
+  padding-left: 10px;
+}
+
+
+.bubble {
+  padding: 3px;
+  background: #EEE;
+  border-radius: 3px;
+}
+
+.commit-history {
+  border: 1px solid #ddd;
+  float: right;
+  width: 30%;
+}
+
+.controls {
+  float: right;
+  clear: right;
+  width: 30%;
+}
+
+.top-bar {
+  background: -webkit-linear-gradient(top, #FAFAFA, #EAEAEA);
+  border-bottom: 1px solid #E1E1E2;
+}
+
+.commit-info {
+  margin: 0 10px;
+}
