@@ -1,0 +1,9 @@
+## TODO
+
+Show line removals
+
+Browser testing in Firefox
+
+Improve the repoman handles
+
+Write more documentation

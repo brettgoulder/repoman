@@ -1,6 +1,6 @@
 # Repoman
 
-TODO: Write a gem description
+A Git tool for tracking file changes over time.
 
 ## Installation
 
@@ -8,7 +8,9 @@ TODO: Write a gem description
 
 ## Usage
 
-TODO: Write usage instructions here
+    1. Go to the repo's base directory of a file you are trying to track
+    2. Run `repoman file_name_you_are_trying_to_track`
+    3. Example `repoman lib/map.rb`
 
 ## Contributing
 

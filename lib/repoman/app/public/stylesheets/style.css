@@ -6,8 +6,6 @@ body {
 }
 
 #container {
-  width: 980px;
-  margin: 0 auto;
   padding-left: 360px;
 }
 
@@ -39,28 +37,32 @@ strong { font-weight: bold; }
   width: 650px;
 }
 
-  .line_number {
-    background-color: #3b3b3b;
-    color: #aaa;
-    padding: 0 3px 0 4px;
-    text-align: center;
-  }
+#code table {
+  width: 700px;
+  display: block;
+}
+.line_number {
+  background-color: #3b3b3b;
+  color: #aaa;
+  padding: 0 3px 0 4px;
+  text-align: right;
+}
 
-  .code {
-    background-color: white;
-    padding-left: 10px;
-  }
+.code {
+  background-color: white;
+  padding-left: 10px;
+}
 
-  .bubble {
-    background: #3B3B3B;
-    border-radius: 3px;
-    padding: 3px;
-  }
+.bubble {
+  background: #3B3B3B;
+  border-radius: 3px;
+  padding: 3px;
+  float: left;
+}
 
-
-  .add td:nth-child(2) {
-    -webkit-animation: portfolio-nav .5s linear forwards;
-  }
+.add td:nth-child(2) {
+  -webkit-animation: code-nav .5s linear forwards;
+}
 
 /* Controls */
 
@@ -70,28 +72,65 @@ strong { font-weight: bold; }
   left: 20px;
 }
 
-  .commit-history {
-    background: -webkit-linear-gradient(top, #20202F, #3B3B3B);
-    border: 1px solid black;
-    margin-top: 20px;
-    line-height: 20px;
-    padding: 10px;
-    min-height: 80px;
-    width: 300px;
-  }
+.commit-history {
+  background: -webkit-linear-gradient(top, #20202F, #3B3B3B);
+  border: 1px solid black;
+  margin-top: 20px;
+  line-height: 20px;
+  padding: 10px;
+  min-height: 80px;
+  width: 300px;
+}
 
-  .info {
-    color: white;
-  }
+.info {
+  color: white;
+}
 
-  .commit-info {
-    margin: 0 10px;
-  }
+.commit-info {
+  margin: 0 10px;
+}
 
 /* Animations */
 
-@-webkit-keyframes portfolio-nav {
+@-webkit-keyframes code-nav {
   100% {  
     background-color: #DFD;
   }  
 }
+
+@-webkit-keyframes slider-button {
+  100% {  
+    background-color: #d3d3d3;
+  }  
+}
+
+input[type='range'] {
+  -webkit-appearance: none !important;
+  background: #20202F;
+  height: 7px;
+  width: 100%;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: white;
+  border: 2px solid black;
+  height:25px;
+  width:25px;
+  border-radius: 100%;
+}
+
+input[type='range']:hover::-webkit-slider-thumb {
+  -webkit-animation: slider-button .2s linear forwards;
+}
+
+.cf:before,
+.cf:after {
+  content:"";
+  display:table;
+}
+
+.cf:after {
+  clear:both;
+}
+
