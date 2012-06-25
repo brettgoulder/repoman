@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "grit"
   gem.add_dependency "map"
   gem.add_dependency "sinatra"
+  gem.add_dependency "rugged", "0.17.0b2"
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "guard-rspec"
   gem.add_development_dependency "pry"

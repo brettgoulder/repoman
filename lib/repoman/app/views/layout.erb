@@ -4,61 +4,46 @@
   <title>Repoman in the House</title>
   <link href="/stylesheets/reset.css" rel="stylesheet" type="text/css">
   <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
-  <script src="/javascripts/vendor/jquery-1.7.2.min.js"></script>
-  <script src="/javascripts/vendor/underscore-min.js"></script>
-  <script src="/javascripts/vendor/backbone-min.js"></script>
-  <script src="/javascripts/application.js"></script>
+  <script type="text/javascript" src="/javascripts/vendor/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="/javascripts/vendor/handlebars-1.0.0.js"></script>
+  <script type="text/javascript" src="/javascripts/diffplayback.js"></script>
+  <script type="text/javascript" src="/javascripts/application.js"></script>
 </head>
+
 <body>
+<script type="text/x-handlebars-template" id="commit-template">
+<div class="commit-info">
+  <p><strong>Message:</strong> {{ info.message }}</p>
+  <p><strong>Author:</strong> {{ info.author.name }}</p>
+  <p><strong>Sha:</strong> {{ info.id }}</p>
+</div>
+</script>
+
+<script type="text/x-handlebars-template" id="row-template">
+  {{#each file}}
+    <tr>
+      <td class="line_number">1</td>
+      <td width="100%" class="code">
+        <pre>{{this}}</pre>
+      </td>
+    </tr>
+  {{/each}}
+</script>
+
 <div id="container">
-  <div class="commit-history">
-    <div class="top-bar">
-      <h2>Commit History</h2>
+  <div id="sidebar">
+    <div class="controls">
+      <input type="range" class="slider" step="1" min="0" value="0" >
     </div>
-    <div class="commit-info">
-      <h3>Message: Commit message</h3>
-      <h4>Author: Brett Goulder</h4>
-      <p>Sha: 19829u1lu1lkh1kj1hkjh1kj1h1</p>
+    <div class="commit-history">
+      <div class="info">
+      </div>
     </div>
   </div>
-  <div class="controls">
-    <a class="button reverse" href="javascript:void(42)">Move Back</a>
-    <a class="button " href="javascript:void(42)">Move Forward</a>
-  </div>
-  <div class="code-info">
+  <div id="code">
     <div class="bubble">
       <table cellpadding="0" cellspacing="0">
         <tbody>
-        <tr>
-          <td class="line_number">1</td>
-          <td width="100%" class="code">
-            <pre>Foobar 1 2 322   2221 111111</pre>
-          </td>
-        </tr>
-        <tr>
-          <td class="line_number">1</td>
-          <td width="100%" class="code">
-            <pre>Foobar 1 2 322   2221 111111</pre>
-          </td>
-        </tr>
-        <tr>
-          <td class="line_number">1</td>
-          <td width="100%" class="code">
-            <pre>Foobar 1 2 322   2221 111111</pre>
-          </td>
-        </tr>
-        <tr>
-          <td class="line_number">1</td>
-          <td width="100%" class="code">
-            <pre>Foobar 1 2 322   2221 111111</pre>
-          </td>
-        </tr>
-        <tr>
-          <td class="line_number">1232</td>
-          <td width="100%" class="code">
-            <pre>Foobar 1 2 322   2221 111111</pre>
-          </td>
-        </tr>
         </tbody>
       </table>
     </div>

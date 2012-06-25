@@ -1,4 +1,3 @@
-require 'rubygems' unless defined?(Gem)
-require './app'
+require 'repoman'
 
 run Repoman::App

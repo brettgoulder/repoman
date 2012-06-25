@@ -1,70 +1,97 @@
+/* Base */
 body {
-  padding-top: 60px;
-  font: 13px Helvetica,arial,freesans,clean,sans-serif;
+  padding: 60px 0 180px;
+  font: 13px "Helvetica Neue", Helvetica, freesans,clean,sans-serif;
+  background: url(/images/background.png) 0 0 repeat;
+}
+
+#container {
+  width: 980px;
+  margin: 0 auto;
+  padding-left: 360px;
 }
 
 /* Fonts */
 h2 {
+  color: #52595D;
+  font-size: 16px;
+  font-weight: bold;
   margin: 0;
   height: 44px;
   line-height: 44px;
   padding: 0 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #52595D;
 }
 
 table td, pre {
   font-family: Menlo, monospace;
   font-size: 13px;
+  height: 13px;
 }
 
-/* Objects */
-#container {
-  width: 980px;
-  margin: 0 auto;
+table td {
+  white-space: nowrap;
 }
 
-.code-info {
-  width: 65%;
+strong { font-weight: bold; }
+
+/* Code display */
+#code {
+  width: 650px;
 }
 
-.line_number {
-  background-color: #ECECEC;
-  color: #aaa;
-  padding: 0 3px 0 4px;
-  text-align: center;
+  .line_number {
+    background-color: #3b3b3b;
+    color: #aaa;
+    padding: 0 3px 0 4px;
+    text-align: center;
+  }
+
+  .code {
+    background-color: white;
+    padding-left: 10px;
+  }
+
+  .bubble {
+    background: #3B3B3B;
+    border-radius: 3px;
+    padding: 3px;
+  }
+
+
+  .add td:nth-child(2) {
+    -webkit-animation: portfolio-nav .5s linear forwards;
+  }
+
+/* Controls */
+
+#sidebar {
+  position: fixed;
+  top: 70px;
+  left: 20px;
 }
 
-.code {
-  background-color: white;
-  padding-left: 10px;
-}
+  .commit-history {
+    background: -webkit-linear-gradient(top, #20202F, #3B3B3B);
+    border: 1px solid black;
+    margin-top: 20px;
+    line-height: 20px;
+    padding: 10px;
+    min-height: 80px;
+    width: 300px;
+  }
 
+  .info {
+    color: white;
+  }
 
-.bubble {
-  padding: 3px;
-  background: #EEE;
-  border-radius: 3px;
-}
+  .commit-info {
+    margin: 0 10px;
+  }
 
-.commit-history {
-  border: 1px solid #ddd;
-  float: right;
-  width: 30%;
-}
+/* Animations */
 
-.controls {
-  float: right;
-  clear: right;
-  width: 30%;
-}
-
-.top-bar {
-  background: -webkit-linear-gradient(top, #FAFAFA, #EAEAEA);
-  border-bottom: 1px solid #E1E1E2;
-}
-
-.commit-info {
-  margin: 0 10px;
+@-webkit-keyframes portfolio-nav {
+  100% {  
+    background-color: #DFD;
+  }  
 }

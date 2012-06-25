@@ -44,17 +44,5 @@ module Repoman
       end
 
     end
-
-    describe '#parse' do
-      before do
-        @parser = Repoman::DiffParse.new(dummy_repo, file)
-        log = @parser.log
-        @commit = @parser.split_commits(@parser.log)[0]
-      end
-
-      it 'should return all the commits in an array' do
-        @parser.parse.count.should == 4
-      end
-    end
   end
 end
